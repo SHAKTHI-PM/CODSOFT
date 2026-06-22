@@ -1,20 +1,37 @@
-let cartCount = 0;
+function createProject() {
+    let projectName = document.getElementById("projectName").value;
 
-function addToCart() {
-    cartCount++;
-    document.getElementById("cart-count").innerText = cartCount;
-    alert("Product added to cart!");
-}
-function checkout() {
-    let payment = confirm("Proceed to Payment?");
-    
-    if(payment) {
-        alert("Payment Successful!");
-    } else {
-        alert("Payment Cancelled!");
+    if(projectName === "") {
+        alert("Please enter a project name");
+        return;
     }
+
+    let project = document.createElement("div");
+    project.innerHTML = "<h3>" + projectName + "</h3>";
+
+    document.getElementById("projects").appendChild(project);
+
+    document.getElementById("projectName").value = "";
 }
-function searchProduct() {
-    let product = document.getElementById("search").value;
-    alert("Searching for: " + product);
+function addTask() {
+    let taskName = document.getElementById("taskName").value;
+
+    if(taskName === "") {
+        alert("Please enter a task");
+        return;
+    }
+
+    let task = document.createElement("div");
+    let deadline = document.getElementById("deadline").value;
+
+task.innerHTML = "<p>" + taskName + " - Deadline: " + deadline + "</p>";
+    document.getElementById("tasks").appendChild(task);
+
+    document.getElementById("taskName").value = "";
+}
+function trackProgress() {
+    let totalTasks = document.getElementById("tasks").children.length;
+
+    document.getElementById("progress").innerText =
+        "Total Tasks: " + totalTasks;
 }
