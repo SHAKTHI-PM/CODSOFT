@@ -1,1 +1,33 @@
-Temporary
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Management Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Project Management Tool</h1>
+
+    <input type="text" id="projectName" placeholder="Enter Project Name">
+
+    <button onclick="createProject()">Create Project</button>
+
+    <div id="projects"></div>
+
+<br>
+
+<input type="text" id="taskName" placeholder="Enter Task">
+<input type="date" id="deadline">
+
+<button onclick="addTask()">Add Task</button>
+
+<br>
+
+<button onclick="trackProgress()">Track Progress</button>
+
+<h3 id="progress"></h3>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
